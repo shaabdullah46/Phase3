@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Project.Models.CategoryTB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to Digital Retailers Inc</h2> 
+<br />
+<h5>Here You will find the available Laptops , Hope you find your need :)</h5>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.CategoryID }) |
+            @Html.ActionLink("Confirm", "Delete", new { id = item.CategoryID })
+        </td>
+    </tr>
+}
+
+</table>

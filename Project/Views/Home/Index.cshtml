@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Project.Models.CategoryTB>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Digital Retailers Inc.</h1>
+    <p class="lead">Welcome to Digital Retailers</p>
+</div>
+
+<h2>Please tell us who are you !</h2>
+<p>
+    <button> @Html.ActionLink("Customer", "Index", "Customer")</button>
+    <button> @Html.ActionLink("Admin", "Login", "Account")</button>
+</p>
+
+

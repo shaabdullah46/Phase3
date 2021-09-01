@@ -1,0 +1,62 @@
+﻿@model Project.Models.Login
+@{
+    ViewBag.Title = "Login";
+}
+<fieldset>
+    <legend>
+        User Login
+    </legend>
+
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    Login Information
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.UserName)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.UserName)
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.UserName, null, new {@class = "text text-danger"})
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.UserPassword)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.UserPassword)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.UserPassword,null,new {@class = "text text-danger"})
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ValidationMessage("Error",null,new {@class = "text text-danger" })
+                </td>
+            </tr>
+        </table>
+
+    }
+</fieldset>
+
